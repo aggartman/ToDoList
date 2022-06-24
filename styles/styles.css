@@ -36,10 +36,17 @@ footer, header, hgroup, menu, nav, section {
 }
 
 body {
-  background-color: #d69d20;
+  background-color: antiquewhite;
 }
 
 #header {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 20px 150px (minmax(10px, 1fr))[3] 150px 20px;
+      grid-template-columns: 20px 150px repeat(3, minmax(10px, 1fr)) 150px 20px;
+  -ms-grid-rows: 10px (minmax(10px, 1fr))[2] 10px;
+      grid-template-rows: 10px repeat(2, minmax(10px, 1fr)) 10px;
+  background-color: #d69d20;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -47,6 +54,12 @@ body {
 }
 
 .pageTitle {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 3;
+  grid-column: 3 / 6;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2 / 3;
   font-family: HoneyBee-Regular;
   font-size: 7rem;
   color: #d89024;
@@ -54,8 +67,55 @@ body {
 }
 
 .about {
+  -ms-grid-column: 4;
+  grid-column: 4;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 3 / 4;
   font-size: 1.25rem;
   font-style: italic;
   line-height: 200%;
+}
+
+.addTask {
+  -ms-grid-column: 5;
+  grid-column: 5;
+  -ms-grid-row: 3;
+  grid-row: 3;
+  -ms-grid-column-align: end;
+      justify-self: end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+#container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 0.25fr (minmax(100px, 1fr))[3] 0.25fr;
+      grid-template-columns: 0.25fr repeat(3, minmax(100px, 1fr)) 0.25fr;
+  -ms-grid-rows: 0.5fr (minmax(100px, 1fr))[4] 0.5fr;
+      grid-template-rows: 0.5fr repeat(4, minmax(100px, 1fr)) 0.5fr;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
+  grid-auto-flow: row;
+}
+
+#content {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 3;
+  grid-column: 2 / 5;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 4;
+  grid-row: 2 / 6;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(20px, 1fr))[5];
+      grid-template-columns: repeat(5, minmax(20px, 1fr));
+  -ms-grid-rows: (minmax(20px, 1fr))[3];
+      grid-template-rows: repeat(3, minmax(20px, 1fr));
 }
 /*# sourceMappingURL=styles.css.map */

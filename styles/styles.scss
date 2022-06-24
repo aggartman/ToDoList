@@ -36,13 +36,19 @@ footer, header, hgroup, menu, nav, section {
 }
 
 body {
-    background-color: rgb(214, 157, 32);
+    background-color: antiquewhite;
 }
 #header {
+    display: grid;
+    grid-template-columns: 20px 150px repeat(3, minmax(10px, 1fr)) 150px 20px;
+    grid-template-rows: 10px repeat(2, minmax(10px, 1fr)) 10px;
+    background-color: rgb(214, 157, 32);
     align-items: center;
     text-align: center;
 }
 .pageTitle {
+    grid-column: 3 / 6;
+    grid-row: 2 / 3;
     font-family: HoneyBee-Regular;
     font-size: 7rem;
     // color: rgba(167, 100, 0, 0.877);
@@ -50,8 +56,32 @@ body {
     text-shadow: 3px 4px 8px rgba(104, 62, 0, 0.726);
 }
 .about {
+    grid-column: 4;
+    grid-row: 3 / 4;
     font-size: 1.25rem;
     font-style: italic;
     line-height: 200%;
+
+}
+.addTask {
+    grid-column: 5;
+    grid-row: 3;
+    justify-self: end;
+    align-items: flex-end;
+}
+#container {
+    display: grid;
+    grid-template-columns: .25fr repeat(3, minmax(100px, 1fr)) .25fr;
+    grid-template-rows: .5fr repeat(4, minmax(100px, 1fr)) .5fr;
+    justify-content: stretch;
+    align-content: stretch;
+    grid-auto-flow: row;
+}
+#content {
+    grid-column: 2 / 5;
+    grid-row: 2 / 6;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(20px, 1fr));
+    grid-template-rows: repeat(3, minmax(20px, 1fr));
 
 }
