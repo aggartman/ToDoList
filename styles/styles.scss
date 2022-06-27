@@ -76,35 +76,51 @@ body {
     }
 }
 .popup {
-    visibility: hidden;
+    // visibility: hidden;
     position: absolute;
-    display: inline-block;
     cursor: pointer;
     min-width: 50%;
-    background-color: rgba(255, 255, 255, 0.466);
+    background-color: rgba(209, 209, 209, 0.555);
     text-align: center;
     border-radius: 2em;
-    padding: 2em 1em;
+    padding: 2em;
     margin: 2% 25%;
     z-index: 1;
 }
-.popup > .popupText {
-    display: inline-block;
-}
 .popupText {
-    text-align: left;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(3em, 1fr));
+    gap: 1em;
     > .newSubject, .newDescription, .newPriority, .newDate {
-        display: inline-block;
         padding: 1rem 2rem;
     }
-    > h1 {
+    > .popupTitle {
+        grid-column: span 3;
         font-size: 1.5rem;
         font-weight: bold;
         line-height: 4rem;
         text-align: center;
     }
     > p {
+        text-align: right;
         font-size: 1.2rem;
+    }
+    .grid-col-span {
+        grid-column: span 2;
+    }
+    > .popupBtn-container {
+        grid-column: 1 / 4;
+        justify-self: center;
+        > .popupBtn {
+            background-color: rgb(216, 144, 36);
+            color: white;
+            font-family: Montserrat, sans-serif;
+            font-weight: bold;
+            font-size: 1rem;
+            width: 25em;
+            padding: .5em;
+            border-radius: 2em;
+        }
     }
 }
 .taskContainer {
