@@ -6,28 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDo List</title>
     <link rel="stylesheet" href="/ToDoList/styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> 
 </head>
 <body>
     <div id="header">
         <h2 class="pageTitle">Your Honey-Dos</h2>
         <p class="about">Add your list of Honey-Dos to keep track of!</p>
-        <button class="addTask">Add Honey-Do</button>
-        <button class="addTask removeTask">Remove Honey-Do</button>
-
+        <div class="buttons">
+            <button class="addTask">Add Honey-Do</button>
+            <button class="removeTask">Remove Honey-Do</button>
+        </div>  
     </div>
     <div id="container">
-        <div id="content">
-            <div class="list">
-                <li>
-                    Task 1
-                    <p>Description: </p>
-                    <p>Due date:</p>
-                </li>
+        <div class="popup">
+            <div class="popupText">
+                <h1>Add New Honey-Do</h1>
+                <p class="newSubject">Subject: </p>
+                <input class="newSubject"/>
+                <p class="newDescription">Description: </p>
+                <input class="newDescription"/>
+                <p class="newPriority">Priority: </p>
+                <input class="newPriority"/>
+                <p class="newDate">Due Date:</p>
+                <input class="newDate"/>
             </div>
-            <div class="list 2"></div>
-            <div class="list 3"></div>
-            <div class="list 4"></div>
-            <div class="list 5"></div>
+        </div>
+        <div class="taskContainer">
+            <article class="task">
+                <p class="number">1.</p>
+                <h1 class="subject">Finish Honey-Do Website</h1>
+                <p class="taskContents description">Continue making progress on the To-Do list project from "The Odin Project". </p>
+                <p class="taskContents priority">High</p>
+                <p class="taskContents date">No Due Date (yet)</p>
+            </article>
         </div>
     </div>
     <script src="scripts/main.js"></script>

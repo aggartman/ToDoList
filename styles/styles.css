@@ -21,6 +21,7 @@ time, mark, audio, video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  font-family: 'Montserrat', sans-serif;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -72,12 +73,12 @@ body {
   -ms-grid-row: 3;
   -ms-grid-row-span: 1;
   grid-row: 3 / 4;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-style: italic;
   line-height: 200%;
 }
 
-.addTask {
+.buttons {
   -ms-grid-column: 5;
   grid-column: 5;
   -ms-grid-row: 3;
@@ -89,33 +90,84 @@ body {
           align-items: flex-end;
 }
 
-#container {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 0.25fr (minmax(100px, 1fr))[3] 0.25fr;
-      grid-template-columns: 0.25fr repeat(3, minmax(100px, 1fr)) 0.25fr;
-  -ms-grid-rows: 0.5fr (minmax(100px, 1fr))[4] 0.5fr;
-      grid-template-rows: 0.5fr repeat(4, minmax(100px, 1fr)) 0.5fr;
-  -webkit-box-pack: stretch;
-      -ms-flex-pack: stretch;
-          justify-content: stretch;
-  -ms-flex-line-pack: stretch;
-      align-content: stretch;
-  grid-auto-flow: row;
+.buttons button {
+  font-size: 1rem;
+  font-family: Montserrat, sans-serif;
+  padding: .25rem .5rem;
 }
 
-#content {
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 3;
-  grid-column: 2 / 5;
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 4;
-  grid-row: 2 / 6;
+.popup {
+  visibility: hidden;
+  position: absolute;
+  display: inline-block;
+  cursor: pointer;
+  min-width: 50%;
+  background-color: rgba(255, 255, 255, 0.466);
+  text-align: center;
+  border-radius: 2em;
+  padding: 2em 1em;
+  margin: 2% 25%;
+  z-index: 1;
+}
+
+.popup > .popupText {
+  display: inline-block;
+}
+
+.popupText {
+  text-align: left;
+}
+
+.popupText > .newSubject, .popupText .newDescription, .popupText .newPriority, .popupText .newDate {
+  display: inline-block;
+  padding: 1rem 2rem;
+}
+
+.popupText > h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 4rem;
+  text-align: center;
+}
+
+.popupText > p {
+  font-size: 1.2rem;
+}
+
+.taskContainer {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(20px, 1fr))[5];
-      grid-template-columns: repeat(5, minmax(20px, 1fr));
-  -ms-grid-rows: (minmax(20px, 1fr))[3];
-      grid-template-rows: repeat(3, minmax(20px, 1fr));
+  -ms-grid-columns: (minmax(100px, 1fr))[4];
+      grid-template-columns: repeat(4, minmax(100px, 1fr));
+  padding: 2% 4%;
+  gap: 1em;
+}
+
+.task {
+  background-color: #d89024;
+  border-radius: 2em;
+  line-height: 2em;
+  padding: 2em;
+}
+
+.task > .subject {
+  font-size: 1.5rem;
+}
+
+.task > .number {
+  font-size: 2rem;
+}
+
+.task > .subject, .task > .number {
+  display: inline;
+}
+
+.task > .taskContents {
+  padding-left: 1em;
+}
+
+.task > .priority {
+  font-style: italic;
+  font-weight: bold;
 }
 /*# sourceMappingURL=styles.css.map */

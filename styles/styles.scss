@@ -22,6 +22,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+    font-family: 'Montserrat', sans-serif;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -58,30 +59,79 @@ body {
 .about {
     grid-column: 4;
     grid-row: 3 / 4;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-style: italic;
     line-height: 200%;
 
 }
-.addTask {
+.buttons {
     grid-column: 5;
     grid-row: 3;
     justify-self: end;
     align-items: flex-end;
+    button {
+        font-size: 1rem;
+        font-family: Montserrat, sans-serif;
+        padding: .25rem .5rem;
+    }
 }
-#container {
-    display: grid;
-    grid-template-columns: .25fr repeat(3, minmax(100px, 1fr)) .25fr;
-    grid-template-rows: .5fr repeat(4, minmax(100px, 1fr)) .5fr;
-    justify-content: stretch;
-    align-content: stretch;
-    grid-auto-flow: row;
+.popup {
+    visibility: hidden;
+    position: absolute;
+    display: inline-block;
+    cursor: pointer;
+    min-width: 50%;
+    background-color: rgba(255, 255, 255, 0.466);
+    text-align: center;
+    border-radius: 2em;
+    padding: 2em 1em;
+    margin: 2% 25%;
+    z-index: 1;
 }
-#content {
-    grid-column: 2 / 5;
-    grid-row: 2 / 6;
+.popup > .popupText {
+    display: inline-block;
+}
+.popupText {
+    text-align: left;
+    > .newSubject, .newDescription, .newPriority, .newDate {
+        display: inline-block;
+        padding: 1rem 2rem;
+    }
+    > h1 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 4rem;
+        text-align: center;
+    }
+    > p {
+        font-size: 1.2rem;
+    }
+}
+.taskContainer {
     display: grid;
-    grid-template-columns: repeat(5, minmax(20px, 1fr));
-    grid-template-rows: repeat(3, minmax(20px, 1fr));
-
+    grid-template-columns: repeat(4, minmax(100px, 1fr));
+    padding: 2% 4%;
+    gap: 1em;
+}
+.task {
+    background-color: rgb(216, 144, 36);
+    border-radius: 2em;
+    line-height: 2em;
+    padding: 2em;
+    > .subject {
+        font-size: 1.5rem;
+    }
+    > .number {
+        font-size: 2rem;
+    }
+    > .subject, > .number {
+        display: inline;
+    }
+    > .taskContents {
+        padding-left: 1em;
+    }
+    > .priority {
+        font-style: italic;
+        font-weight: bold;
+    }
 }
