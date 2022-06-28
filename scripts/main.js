@@ -2,12 +2,14 @@ function clearPopup() {
     var subject = document.getElementById("newSubjectInput");
     var description = document.getElementById("newDescriptionInput");
     var priority = document.getElementById("newPriorityInput");
-    var date = document.getElementById("newDateInput"); 
+    var date = document.getElementById("newDateInput");
+    var removeNumber = document.getElementById("taskRemoveInput"); 
 
     subject.value = "";
     description.value = "";
     priority.value = "";
     date.value = "";
+    removeNumber.value = "";
 }
 
 function showPopup() {
@@ -23,7 +25,6 @@ function hidePopup() {
     popup.classList.toggle("hide");
     popup.classList.remove("show");
     clearPopup();
-
 }
 
 function addTask() {
@@ -34,10 +35,11 @@ function addTask() {
     var taskContainer = document.getElementById("taskContainer");
 
     var numberField = document.querySelectorAll('p.number');
-    var textNumber = numberField[numberField.length - 1];
-    textNumber = textNumber.value;
-    var integer = parseInt(textNumber);
-    var number = integer++;
+    var integer = numberField.length;
+    if (integer == null) {
+        integer = 0;
+    }
+    var number = integer + 1;
 
     var article = document.createElement("article");
     article.classList.add("task");
@@ -69,5 +71,19 @@ function addTask() {
     
     taskContainer.appendChild(article);
     hidePopup();
+    clearPopup();
+}
+
+function showRemovePopup() {
+    var popup = document.getElementById('popup2');
+    popup.classList.toggle("show");
+    popup.classList.remove("hide");
+}
+
+function hideRemovePopup() {
+    // When user clicks on "Cancel", hide popup
+    var popup = document.getElementById("popup2");
+    popup.classList.toggle("hide");
+    popup.classList.remove("show");
     clearPopup();
 }

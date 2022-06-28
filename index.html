@@ -16,7 +16,7 @@
         <p class="about">Add your list of Honey-Dos to keep track of!</p>
         <div class="buttons">
             <button id="btn1" class="addTask" onclick="showPopup()">Add Honey-Do</button>
-            <button id="btn2" class="removeTask">Remove Honey-Do</button>
+            <button id="btn2" class="removeTask" onclick="showRemovePopup()">Remove Honey-Do</button>
         </div>  
     </div>
     <div id="container">
@@ -34,6 +34,17 @@
                 <div class="popupBtn-container">    
                     <button class="popupBtn save" onclick="addTask()">Save</button>
                     <button class="popupBtn cancel" onclick="hidePopup()">Cancel</button>
+                </div>
+            </div>
+        </div>
+        <div id="popup2" class="popup2">
+            <div class="popupText">
+                <h1 class="popupTitle">Remove Honey-Do by Task Number</h1>
+                <p class="taskRemove">Which Task Number would you like to remove? </p>
+                <input class="taskRemove grid-col-span" id="taskRemoveInput"/>
+                <div class="popupBtn-container">    
+                    <button class="popupBtn save" onclick="">Confirm</button>
+                    <button class="popupBtn cancel" onclick="hideRemovePopup()">Cancel</button>
                 </div>
             </div>
         </div>

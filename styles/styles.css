@@ -32,7 +32,7 @@ footer, header, hgroup, menu, nav, section {
 
 @font-face {
   font-family: HoneyBee-Regular;
-  src: url(fonts/HoneyBee-Regular.otf);
+  src: url(../fonts/HoneyBee-Regular.otf);
   font-weight: bold;
 }
 
@@ -145,6 +145,20 @@ body {
   padding: 2em;
 }
 
+.popup2 {
+  visibility: hidden;
+  position: absolute;
+  left: 22%;
+  top: 35%;
+  cursor: pointer;
+  max-width: 50%;
+  min-width: 40%;
+  background-color: rgba(209, 209, 209, 0.555);
+  text-align: center;
+  border-radius: 2em;
+  padding: 2em;
+}
+
 .show {
   visibility: visible;
   -webkit-animation: fadeIn 1s;
@@ -167,6 +181,10 @@ body {
 
 .popupText > .newSubject, .popupText .newDescription, .popupText .newPriority, .popupText .newDate {
   padding: 1rem 2rem;
+}
+
+.popupText > .taskRemove {
+  padding: 1rem 1rem;
 }
 
 .popupText > .popupTitle {
