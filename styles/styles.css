@@ -32,8 +32,44 @@ footer, header, hgroup, menu, nav, section {
 
 @font-face {
   font-family: HoneyBee-Regular;
-  src: url(/ToDoList/fonts/HoneyBee-Regular.otf);
+  src: url(fonts/HoneyBee-Regular.otf);
   font-weight: bold;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  100% {
+    opacity: 1;
+  }
+  0% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  100% {
+    opacity: 1;
+  }
+  0% {
+    opacity: 0;
+  }
 }
 
 body {
@@ -97,15 +133,28 @@ body {
 }
 
 .popup {
+  visibility: hidden;
   position: absolute;
+  left: 22%;
+  top: 35%;
   cursor: pointer;
   min-width: 50%;
   background-color: rgba(209, 209, 209, 0.555);
   text-align: center;
   border-radius: 2em;
   padding: 2em;
-  margin: 2% 25%;
-  z-index: 1;
+}
+
+.show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+          animation: fadeIn 1s;
+}
+
+.hide {
+  visibility: hidden;
+  -webkit-animation: fadeOut 1s;
+          animation: fadeOut 1s;
 }
 
 .popupText {

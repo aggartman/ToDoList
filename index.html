@@ -5,39 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDo List</title>
-    <link rel="stylesheet" href="/ToDoList/styles/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2family=Montserratdisplay=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css"> 
 </head>
 <body>
     <div id="header">
         <h2 class="pageTitle">Your Honey-Dos</h2>
         <p class="about">Add your list of Honey-Dos to keep track of!</p>
         <div class="buttons">
-            <button class="addTask">Add Honey-Do</button>
-            <button class="removeTask">Remove Honey-Do</button>
+            <button id="btn1" class="addTask" onclick="showPopup()">Add Honey-Do</button>
+            <button id="btn2" class="removeTask">Remove Honey-Do</button>
         </div>  
     </div>
     <div id="container">
-        <div class="popup">
+        <div id="myPopup" class="popup">
             <div class="popupText">
                 <h1 class="popupTitle">Add New Honey-Do</h1>
                 <p class="newSubject">Subject: </p>
-                <input class="newSubject grid-col-span"/>
+                <input class="newSubject grid-col-span" id="newSubjectInput"/>
                 <p class="newDescription">Description: </p>
-                <input class="newDescription grid-col-span"/>
+                <input class="newDescription grid-col-span" id="newDescriptionInput"/>
                 <p class="newPriority">Priority: </p>
-                <input class="newPriority grid-col-span"/>
+                <input class="newPriority grid-col-span" id="newPriorityInput"/>
                 <p class="newDate">Due Date:</p>
-                <input class="newDate grid-col-span"/>
+                <input class="newDate grid-col-span" id="newDateInput"/>
                 <div class="popupBtn-container">    
-                    <button class="popupBtn save">Save</button>
-                    <button class="popupBtn cancel">Cancel</button>
+                    <button class="popupBtn save" onclick="addTask()">Save</button>
+                    <button class="popupBtn cancel" onclick="hidePopup()">Cancel</button>
                 </div>
             </div>
         </div>
-        <div class="taskContainer">
+        <div id="taskContainer" class="taskContainer">
             <article class="task">
                 <p class="number">1.</p>
                 <h1 class="subject">Finish Honey-Do Website</h1>
@@ -47,6 +47,6 @@
             </article>
         </div>
     </div>
-    <script src="scripts/main.js"></script>
+    <script src="scripts/main.js" defer></script>
 </body>
 </html>
